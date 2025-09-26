@@ -10,7 +10,6 @@ from pandas import json_normalize
 from os import path
 import requests
 import pandas as pd
-from io import BytesIO
 import streamlit as st
 DATA_DIR = '/users/harrisonkreiling/desktop/python/college-football-info'
 pd.set_option('display.max_columns', None)
@@ -25,11 +24,11 @@ week = 5
 
 # In[15]:
 
+uploaded_file = st.file_uploader("Upload CSV", type="csv")
+if uploaded_file is not None:
+    df = pd.read_csv(uploaded_file)
 
-df = pd.read_csv(path.join(DATA_DIR, f'full_dataframe_asof_week_{week}.csv'))
-
-
-# In[17]:
+In[17]:
 st.title("College Football")
 week = st.sidebar.selectbox("Select Week", sorted(df["week"].unique()))
 week_view = df.loc[
