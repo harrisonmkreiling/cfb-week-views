@@ -9,18 +9,7 @@ import pandas as pd
 from pandas import json_normalize
 from os import path
 import requests
-from collections import defaultdict
-from tqdm import tqdm
-from sklearn.preprocessing import StandardScaler
-from sklearn.linear_model import LinearRegression
-from scipy.stats import norm
-from sklearn.linear_model import Ridge
-from sklearn.metrics import r2_score
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
-import seaborn as sns
 import pandas as pd
-import requests
 from io import BytesIO
 import streamlit as st
 DATA_DIR = '/users/harrisonkreiling/desktop/python/college-football-info'
